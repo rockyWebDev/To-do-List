@@ -12,10 +12,10 @@ button{
     height: 50px;
     font-size: 40px;
 }
-.add{
+#add{
     color:lightgreen;
     
 }
-.remove{
+#remove{
     color:lightcoral;
 }
