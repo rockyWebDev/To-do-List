@@ -1,5 +1,7 @@
 let mainTask= document.getElementById("main-tasks");
 let addBtn= document.getElementById("add");
+let priority= document.getElementById("priority");
+let priorityDiv= document.getElementById("priorityDiv")
 function addTask(){
 	let task= document.getElementById("task-name").value;
 	let newTask=document.createElement("p");
@@ -12,8 +14,11 @@ function addTask(){
 	let removeBtn=document.createTextNode("\u2716");
 	newButton.appendChild(removeBtn);
 	newTask.appendChild(newButton);
+	if (priority.checked){
+		mainTask.prepend(newTask);
+	}else{ 
 	mainTask.append(newTask);
-}
+}}
 function removeTask(){
 	let currentTask=document.activeElement.parentNode;
 	currentTask.parentNode.removeChild(currentTask);
