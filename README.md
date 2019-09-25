@@ -7,3 +7,4 @@ Steps:
 	5.Create tasks within tasks.
 	6.Progress bar on task tree.
 	7.Optional deadline on tasks.
+	8.Add sorting options.
