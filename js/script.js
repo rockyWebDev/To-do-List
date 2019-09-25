@@ -8,12 +8,20 @@ function addTask(){
 	newTask.setAttribute("class","task");
 	let newLine=document.createTextNode(task);
 	newTask.appendChild(newLine);
-	let newButton=document.createElement("button");
-	newButton.setAttribute("onclick","removeTask()")
-	newButton.setAttribute("id","remove")
+	let addButton=document.createElement("button");
+	
+	addButton.setAttribute("onclick","addTask()")
+	addButton.setAttribute("id","add")
+	let addBtn=document.createTextNode("\u271a");
+	addButton.appendChild(addBtn);
+	newTask.appendChild(addButton);
+	let remButton=document.createElement("button");
+	remButton.setAttribute("onclick","removeTask()")
+	remButton.setAttribute("id","remove")
 	let removeBtn=document.createTextNode("\u2716");
-	newButton.appendChild(removeBtn);
-	newTask.appendChild(newButton);
+	remButton.appendChild(removeBtn);
+	newTask.appendChild(remButton);
+	
 	if (priority.checked){
 		mainTask.prepend(newTask);
 	}else{ 
