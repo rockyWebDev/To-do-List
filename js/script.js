@@ -1,8 +1,10 @@
 let mainTask= document.getElementById("main-tasks");
+let addMainBtn= document.getElementById("addMain");
 let addBtn= document.getElementById("add");
 let priority= document.getElementById("priority");
 let priorityDiv= document.getElementById("priorityDiv")
 function addTask(){
+	let currentTask=document.activeElement.parentNode;
 	let task= document.getElementById("task-name").value;
 	let newTask=document.createElement("p");
 	newTask.setAttribute("class","task");
@@ -21,12 +23,20 @@ function addTask(){
 	let removeBtn=document.createTextNode("\u2716");
 	remButton.appendChild(removeBtn);
 	newTask.appendChild(remButton);
-	
-	if (priority.checked){
+	if (currentTask.id==addMain){
+		if (priority.checked){
 		mainTask.prepend(newTask);
 	}else{ 
-	mainTask.append(newTask);
-}}
+		mainTask.append(newTask);
+	}}else{
+		if (priority.checked){
+		currentTask.prepend(newTask);
+	}else{ 
+		currentTask.append(newTask);
+	}
+		
+	}
+}
 function removeTask(){
 	let currentTask=document.activeElement.parentNode;
 	currentTask.parentNode.removeChild(currentTask);
